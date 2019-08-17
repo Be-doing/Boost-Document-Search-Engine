@@ -2,7 +2,6 @@
 ▩ File Name: sercher.h
 ▩ Author: top-down
 ▩ Description: //构建索引模块和搜索模块
-▩ Created Time: 2019年07月22日 星期一 18时00分25秒
 ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░*/
 //#pragma once
 #include<string>
