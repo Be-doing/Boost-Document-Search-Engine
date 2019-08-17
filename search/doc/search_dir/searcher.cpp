@@ -1,5 +1,6 @@
 #include "searcher.h"
 
+
 namespace searcher
 {
 /**************************************************
