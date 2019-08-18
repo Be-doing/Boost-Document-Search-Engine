@@ -37,6 +37,7 @@ class FileUtil
 			return true;
 		}
 };
+
 class StringUtil
 {
 	public:
