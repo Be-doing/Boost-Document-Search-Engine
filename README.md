@@ -1,8 +1,8 @@
 # Boost-Document-Search-Engine
-### synopsis
-Boost-C++ LIBRARIES is a third-party library of C++, and boost library is a very powerful library. In the future development trend of C++, I think boost may be added to the standard library of C++, but the boost website does not have the function of searching documents, so it is a project. This project is a search engine for basic boost documents. When a user enters a query word, the relevant document pages of this key word can be found out, and the purpose of searching documents has been achieved.
+### 项目简介
+boost-C++LIBRARIES是C++的第三方库，boost库是一个非常强大剽悍的库。在C++未来的发展趋势中，我认为boost可能会加入到C++的标准库中，但是boost网站没有搜索文档的这个功能，因此做个项目。这个项目是一个基本boost文档的搜索引擎，当用户输入一个查询词时，把这个关键词的相关文档网页查找出来，已达到搜索文档的目的。
 
-### Ending
-Because of poverty, no cloud server has been purchased, so the front-end has not been developed yet.
+### 结尾
+前端正在开发
 
-But it's coming soon.
+it's coming soon.
