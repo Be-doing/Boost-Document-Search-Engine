@@ -1,6 +1,5 @@
 #include "searcher.h"
-
-
+#include <ctemplate/template.h>
 namespace searcher
 {
 /**************************************************
@@ -125,7 +124,7 @@ namespace searcher
 	{
 		return index_->Build(inputpath);
 	}
-	bool Searcher::Search(const std::string& query, std::string& json_result)
+	bool Searcher::Search(const std::string& query, std::string& result)
 	{
 		//分词
 		std::vector<std::string> tokens;
@@ -146,25 +145,21 @@ namespace searcher
 			return w1.weight > w2.weight;
 		});
 		//返回结果
-		Json::Value results;
+		ctemplate::TemplateDictionary dict("index");
 		for(const auto& weight : all_token_result)
 		{
 			const auto* doc_info = index_->GetDocInfo(weight.doc_id);
 			if(doc_info == nullptr)
 				continue;
-
-			Json::Value result;
-			result["title"] = doc_info->title;
-			result["url"] = doc_info->url;
-			result["desc"] = Getdesc(doc_info->content, weight.key);
-			results.append(result);
+			 ctemplate::TemplateDictionary* table1_dict = dict.AddSectionDictionary("TABLE1");
+			 table1_dict->SetValue("url", doc_info->url);
+			 table1_dict->SetValue("title",doc_info->title);
+			 table1_dict->SetValue("desc",Getdesc(doc_info->content, weight.key));
 		}
-		std::ostringstream os;
-		Json::StreamWriterBuilder builder;
-		std::unique_ptr<Json::StreamWriter> writer(builder.newStreamWriter());
+		ctemplate::Template* tpl;
+		tpl = ctemplate::Template::GetTemplate("index.html", ctemplate::DO_NOT_STRIP);
+		tpl->Expand(&result, &dict);
 
-		writer->write(results, &os);
-		json_result = os.str();
 		return true;
 	}
 
