@@ -145,7 +145,7 @@ namespace searcher
 			return w1.weight > w2.weight;
 		});
 		//返回结果
-		ctemplate::TemplateDictionary dict("index");
+		ctemplate::TemplateDictionary dict("index");//google ctemplate
 		for(const auto& weight : all_token_result)
 		{
 			const auto* doc_info = index_->GetDocInfo(weight.doc_id);
