@@ -25,6 +25,7 @@ void GetFile(const hb::Request& req, hb::Response& res)
 	res.set_content(body.c_str(),"text/html");
 }
 
+
 int main()
 {
 	daemon(1,0);
