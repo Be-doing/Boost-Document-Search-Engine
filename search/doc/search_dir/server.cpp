@@ -2,6 +2,7 @@
 ▩ File Name: server.cpp
 ▩ Author: top-down
 ▩ Description: 
+▩ Created Time: 2019年08月20日 星期二 22时44分19秒
 ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░*/
 
 #include<iostream>
@@ -11,12 +12,12 @@
 using namespace std;
 namespace hb = httplib;
 
-const char* BASE_PATH = "./";
+const char* BASE_PATH = "./root";
 void GetFile(const hb::Request& req, hb::Response& res)                                                          
 {
 	string body;
 	string tmp;
-	ifstream file("./root/test.html");
+	ifstream file("./html/search.html");
 	while(getline(file,tmp))
 	{
 		body += tmp +  "\n";
@@ -26,6 +27,7 @@ void GetFile(const hb::Request& req, hb::Response& res)
 
 int main()
 {
+	daemon(1,0);
 	hb::Server srv;
 	
 	searcher::Searcher search;
@@ -35,17 +37,14 @@ int main()
 	srv.set_base_dir(BASE_PATH);
 	srv.Get("/cgi-bin/cpp_get.cgi",[&search](const hb::Request& req, hb::Response& res)
 				{
-				std::string query = req.get_param_value("first_name");
+				std::string query = req.get_param_value("query");
 				std::string body;
 				search.Search(query,body);
 				res.set_content(body.c_str(),"text/html");
 				});
 	
 	srv.Get("/",GetFile);
-	if(!srv.listen("***.***.***.***",***))//私网IP和端口
-	{
-		std::cout << "listen error" << std::endl;	
-	}
+	srv.listen("172.17.0.7",9527);
 	return 0;
 }
 
