@@ -9,7 +9,7 @@ boost-C++LIBRARIES是C++的第三方库，boost库是一个非常强大剽悍的
 #### 使用
 如若需要直接使用这个搜索引擎：请访问I👉 [boost SOSO](http://www.lgcheng.xyz)<br>
 
-当然您也可以扫这个二维码。
+当然您也可以扫这个二维码。【已过期】
 ![boost SOSO](https://github.com/Be-doing/Boost-Document-Search-Engine/blob/master/screenshot/%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99.png)
 
 ### 使用
