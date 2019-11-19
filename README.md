@@ -7,7 +7,7 @@ boost-C++LIBRARIES是C++的第三方库，boost库是一个非常强大剽悍的
 您可以直接clone，通过目录下有个项目目录树，找到seach_dir，其中修改server.cpp的IP地址和端口号，就可以成为自己服务器上的搜索引擎。`如果是自己的个人云服务器要绑定的是私网IP`<br>
 当然在html中的网页可以找自己喜欢的网页，直接替换，不用再进行编译哦。
 #### 使用
-如若需要直接使用这个搜索引擎：请访问I👉 [boost SOSO](http://49.235.212.42:9527/) `目前域名正在申请ing……`<br>
+如若需要直接使用这个搜索引擎：请访问I👉 [boost SOSO](http://www.lgcheng.xyz)<br>
 
 当然您也可以扫这个二维码。
 ![boost SOSO](https://github.com/Be-doing/Boost-Document-Search-Engine/blob/master/screenshot/%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99.png)
@@ -18,6 +18,4 @@ boost-C++LIBRARIES是C++的第三方库，boost库是一个非常强大剽悍的
 
 
 ### 结尾
-前端正在开发
-
-it's coming soon.
+这是一个搜索引擎的小型框架，您可以用来搜索博客等。
